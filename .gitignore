@@ -1,6 +1,25 @@
+# Dependencies
 node_modules/
+
+# Next.js build output
 .next/
-.env.local
-.vscode/
+out/
 dist/
+
+# Local env vars (NEVER commit this)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
 build/
