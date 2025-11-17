@@ -32,7 +32,7 @@ export default function CareersPage() {
           <div className="flex flex-wrap gap-3 text-[11px] text-muted-foreground">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Remote / Hybrid · Mumbai
+              Offline only · Mumbai
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1">
               <span className="h-2 w-2 rounded-full bg-sky-400" />
@@ -40,7 +40,7 @@ export default function CareersPage() {
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-              Typical process: 5–7 days from application
+              Typical process: 15–30 days from application
             </div>
           </div>
         </header>

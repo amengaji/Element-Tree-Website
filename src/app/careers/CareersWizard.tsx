@@ -514,56 +514,84 @@ export default function CareersWizard() {
     );
   }
 
-  function renderDepartmentStep() {
-    return (
-      <div className="space-y-4">
-        <header className="space-y-1">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
-            Step 1 — Select department
-          </p>
-          <h2 className="text-sm md:text-base font-semibold">
-            Choose the team that best fits your background.
-          </h2>
-          <p className="text-xs text-muted-foreground">
-            You’ll choose a specific role in the next step. If you’re flexible,
-            pick the closest match.
-          </p>
-        </header>
+function renderDepartmentStep() {
+  return (
+    <div className="space-y-6">
+      <header className="space-y-1">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
+          Step 1 — Select department
+        </p>
+        <h2 className="text-sm md:text-base font-semibold">
+          Choose the team that best fits your background.
+        </h2>
+        <p className="text-xs text-muted-foreground">
+          You’ll choose a specific role in the next step. These cards now show a quick preview of roles.
+        </p>
+      </header>
 
-        <div className="grid gap-4 md:grid-cols-2">
-          {DEPARTMENTS.map((dept) => {
-            const isSelected = selectedDeptKey === dept.key;
-            return (
-              <button
-                key={dept.key}
-                type="button"
-                onClick={() => {
-                  setSelectedDeptKey(dept.key);
-                  setSelectedRoleKey(null);
-                }}
-                className={cn(
-                  "text-left rounded-xl border px-4 py-3 text-xs transition hover:border-emerald-400/70 hover:bg-emerald-500/5",
-                  isSelected
-                    ? "border-emerald-500 bg-emerald-500/10"
-                    : "border-border/70 bg-background/80",
+      <div className="grid gap-6 md:grid-cols-2">
+        {DEPARTMENTS.map((dept) => {
+          const isSelected = selectedDeptKey === dept.key;
+
+          return (
+            <button
+              key={dept.key}
+              type="button"
+              onClick={() => {
+                setSelectedDeptKey(dept.key);
+                setSelectedRoleKey(null);
+              }}
+              className={cn(
+                "text-left rounded-2xl border px-6 py-6 shadow-sm transition-all",
+                "hover:border-emerald-400 hover:bg-emerald-100/20 hover:shadow-md dark:hover:bg-emerald-900/30",
+                isSelected
+                  ? "border-emerald-500 bg-emerald-50 shadow-lg"
+                  : "border-neutral-200 dark:border-border/70  bg-background/80"
+              )}
+            >
+              {/* Title Row */}
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-base font-semibold">{dept.name}</h3>
+                {isSelected && (
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                 )}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <p className="text-sm font-semibold">{dept.name}</p>
-                  {isSelected && (
-                    <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                  )}
-                </div>
-                <p className="mt-1 text-[11px] text-muted-foreground">
-                  {dept.description}
-                </p>
-              </button>
-            );
-          })}
-        </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {dept.description}
+              </p>
+
+              {/* Role previews */}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {dept.roles.slice(0, 3).map((r) => (
+                  <span
+                    key={r.key}
+                    className="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] text-emerald-700"
+                  >
+                    {r.title}
+                  </span>
+                ))}
+
+                {dept.roles.length > 3 && (
+                  <span className="inline-flex items-center rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">
+                    +{dept.roles.length - 3} more
+                  </span>
+                )}
+              </div>
+
+              {/* Footer CTA */}
+              <div className="mt-4 text-[11px] font-medium text-emerald-600 group-hover:underline">
+                View {dept.roles.length} roles →
+              </div>
+            </button>
+          );
+        })}
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   function renderRoleStep() {
     return (
