@@ -1,32 +1,26 @@
 // src/app/api/admin/verify-mfa/route.ts
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   const { code } = await req.json();
   const expected = process.env.ADMIN_MFA_CODE;
 
-  if (!expected) {
-    return NextResponse.json(
-      { success: false, error: "MFA not configured." },
-      { status: 500 }
-    );
-  }
-
   if (!code || code !== expected) {
     return NextResponse.json(
-      { success: false, error: "Invalid code." },
+      { success: false, error: "Invalid code" },
       { status: 401 }
     );
   }
 
   const res = NextResponse.json({ success: true });
 
-  res.cookies.set("et_admin_mfa", "1", {
+  res.cookies.set("admin_mfa", "verified", {
     httpOnly: true,
-    secure: true,
     sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 60 * 30,
     path: "/",
-    maxAge: 60 * 60, // 1 hour
   });
 
   return res;

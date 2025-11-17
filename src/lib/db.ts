@@ -1,36 +1,28 @@
+// src/lib/db.ts
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI as string;
+const MONGODB_URI = process.env.MONGODB_URI!;
+const DB_NAME = process.env.MONGODB_DB_NAME!;
 
 if (!MONGODB_URI) {
-  throw new Error("MONGODB_URI is not set in environment variables");
+  throw new Error("❌ MONGODB_URI is missing in .env.local");
 }
 
-interface MongooseCache {
-  conn: typeof mongoose | null;
-  promise: Promise<typeof mongoose> | null;
-}
+let cached = (global as any)._mongoose || { conn: null, promise: null };
 
-// @ts-ignore
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
-
-// @ts-ignore
-global.mongoose = cached;
-
-/**
- * Connect to MongoDB using a shared cached connection.
- */
-export async function connectDB(): Promise<typeof mongoose> {
-  if (cached.conn) {
-    return cached.conn;
-  }
+export async function connectDB() {
+  if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI).then((mongooseInstance) => {
-      return mongooseInstance;
-    });
+    cached.promise = mongoose
+      .connect(MONGODB_URI, {
+        dbName: DB_NAME,
+      })
+      .then((m) => m);
   }
 
   cached.conn = await cached.promise;
   return cached.conn;
 }
+
+(global as any)._mongoose = cached;

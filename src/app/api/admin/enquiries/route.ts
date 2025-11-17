@@ -1,36 +1,32 @@
 // src/app/api/admin/enquiries/route.ts
 import { NextResponse } from "next/server";
-import { getDb } from "@/lib/mongo";
+import { cookies } from "next/headers";
+import { connectDB } from "@/lib/db";
+import Enquiry from "@/models/Enquiry";
 
 export async function GET() {
-  try {
-    const db = await getDb();
-    const collection = db.collection("enquiries");
+  const cookieStore = await cookies();
+  const session = cookieStore.get("admin_session");
 
-    const items = await collection
-      .find({})
-      .sort({ createdAt: -1 })
-      .limit(100)
-      .toArray();
-
-    // Convert _id to string for the client
-    const data = items.map((doc) => ({
-      id: doc._id?.toString() ?? "",
-      name: doc.name ?? "",
-      email: doc.email ?? "",
-      company: doc.company ?? "",
-      country: doc.country ?? "",
-      interest: doc.interest ?? "",
-      message: doc.message ?? "",
-      createdAt: doc.createdAt ?? null,
-    }));
-
-    return NextResponse.json({ ok: true, data });
-  } catch (error) {
-    console.error("Error fetching enquiries:", error);
-    return NextResponse.json(
-      { ok: false, error: "Server error" },
-      { status: 500 },
-    );
+  if (!session || session.value !== "active") {
+    return NextResponse.json({ success: false }, { status: 401 });
   }
+
+  await connectDB();
+  const docs = await Enquiry.find().sort({ createdAt: -1 });
+
+  const data = docs.map((x) => ({
+    id: x._id.toString(),
+    fullName: x.fullName,
+    email: x.email,
+    phone: x.phone,
+    company: x.company,
+    country: x.country,
+    interest: x.interest,
+    message: x.message,
+    status: x.status,
+    createdAt: x.createdAt,
+  }));
+
+  return NextResponse.json({ success: true, data });
 }

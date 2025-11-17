@@ -1,44 +1,45 @@
-// src/app/api/careers/apply/route.ts
+// src/app/api/admin/applications/route.ts
 import { NextResponse } from "next/server";
-import { getDb } from "@/lib/mongo";
+import { cookies } from "next/headers";
+import { connectDB } from "@/lib/db";
+import Applicant from "@/models/Applicant";
 
-export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-
-    const {
-      departmentKey,
-      roleKey,
-      basicInfo,
-      roleAnswers,
-      stepVersion = "v2-react-wizard",
-    } = body || {};
-
-    if (!departmentKey || !roleKey || !basicInfo?.fullName || !basicInfo?.email) {
-      return NextResponse.json(
-        { ok: false, error: "Missing required fields" },
-        { status: 400 },
-      );
-    }
-
-    const db = await getDb();
-    const collection = db.collection("career_applications");
-
-    await collection.insertOne({
-      stepVersion,
-      departmentKey,
-      roleKey,
-      basicInfo,
-      roleAnswers: roleAnswers || {},
-      createdAt: new Date(),
-    });
-
-    return NextResponse.json({ ok: true });
-  } catch (error) {
-    console.error("Error saving career application:", error);
+export async function GET() {
+  const session = cookies().get("admin_session");
+  if (!session || session.value !== "active") {
     return NextResponse.json(
-      { ok: false, error: "Server error" },
-      { status: 500 },
+      { success: false, error: "Unauthorized" },
+      { status: 401 }
+    );
+  }
+
+  try {
+    await connectDB();
+    const docs = await Applicant.find().sort({ createdAt: -1 });
+
+    const data = docs.map((a) => ({
+      id: a._id.toString(),
+      fullName: a.fullName,
+      email: a.email,
+      phone: a.phone,
+      portfolio: a.portfolio,
+      linkedin: a.linkedin,
+      resumeUrl: a.resumeUrl,
+      coverLetter: a.coverLetter,
+      department: a.department,
+      role: a.role,
+      experience: a.experience,
+      country: a.country,
+      status: a.status,
+      createdAt: a.createdAt,
+    }));
+
+    return NextResponse.json({ success: true, data });
+  } catch (err) {
+    console.error("Admin Applications Error:", err);
+    return NextResponse.json(
+      { success: false, error: "Failed to load applications." },
+      { status: 500 }
     );
   }
 }

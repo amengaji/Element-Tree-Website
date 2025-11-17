@@ -1,53 +1,54 @@
 // src/app/api/admin/careers/route.ts
-import { NextRequest, NextResponse } from "next/server";
-import { ObjectId } from "mongodb";
-import { getDb } from "@/lib/mongo";
-import { checkAdminAuth } from "@/lib/admin-auth";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { connectDB } from "@/lib/db";
+import CareerOpening from "@/models/CareerOpening";
 
-export async function GET(req: NextRequest) {
-  const authError = checkAdminAuth(req);
-  if (authError) return authError;
-
-  const db = await getDb();
-  const careers = await db
-    .collection("careerOpenings")
-    .find({})
-    .sort({ createdAt: -1 })
-    .toArray();
-
-  return NextResponse.json({ careers });
-}
-
-export async function POST(req: NextRequest) {
-  const authError = checkAdminAuth(req);
-  if (authError) return authError;
-
-  const body = await req.json().catch(() => null);
-  if (!body) {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+export async function GET() {
+  const session = cookies().get("admin_session");
+  if (!session || session.value !== "active") {
+    return NextResponse.json({ success: false }, { status: 401 });
   }
 
-  const doc = {
-    title: body.title?.toString() ?? "",
-    departmentKey: body.departmentKey?.toString() ?? "",
-    departmentName: body.departmentName?.toString() ?? "",
-    location: body.location?.toString() ?? "",
-    type: body.type?.toString() ?? "",
-    summary: body.summary?.toString() ?? "",
-    isActive: Boolean(body.isActive),
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  };
+  await connectDB();
+  const docs = await CareerOpening.find().sort({ createdAt: -1 });
 
-  if (!doc.title || !doc.departmentKey) {
+  const data = docs.map((c) => ({
+    id: c._id.toString(),
+    title: c.title,
+    department: c.department,
+    description: c.description,
+    location: c.location,
+    status: c.status,
+  }));
+
+  return NextResponse.json({ success: true, careers: data });
+}
+
+export async function POST(req: Request) {
+  const session = cookies().get("admin_session");
+  if (!session || session.value !== "active") {
+    return NextResponse.json({ success: false }, { status: 401 });
+  }
+
+  const body = await req.json();
+  const { title, department, description, location } = body;
+
+  if (!title || !department) {
     return NextResponse.json(
-      { error: "Title and department are required." },
-      { status: 400 },
+      { success: false, error: "Missing fields." },
+      { status: 400 }
     );
   }
 
-  const db = await getDb();
-  const result = await db.collection("careerOpenings").insertOne(doc);
+  await connectDB();
+  await CareerOpening.create({
+    title,
+    department,
+    description,
+    location,
+    status: "active",
+  });
 
-  return NextResponse.json({ id: result.insertedId.toString() });
+  return NextResponse.json({ success: true });
 }

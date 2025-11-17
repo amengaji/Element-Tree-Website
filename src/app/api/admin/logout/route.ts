@@ -1,14 +1,18 @@
 // src/app/api/admin/logout/route.ts
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
-export async function POST(_req: NextRequest) {
+export async function POST() {
   const res = NextResponse.json({ success: true });
-  res.cookies.set("admin_session", "", {
+  const cookieStore = await cookies();
+
+  cookieStore.set("admin_session", "", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
+    expires: new Date(0),
     path: "/",
-    maxAge: 0,
   });
+
   return res;
 }

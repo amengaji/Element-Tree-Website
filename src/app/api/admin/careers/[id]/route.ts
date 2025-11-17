@@ -1,48 +1,42 @@
 // src/app/api/admin/careers/[id]/route.ts
-import { NextRequest, NextResponse } from "next/server";
-import { ObjectId } from "mongodb";
-import { getDb } from "@/lib/mongo";
-import { checkAdminAuth } from "@/lib/admin-auth";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { connectDB } from "@/lib/db";
+import CareerOpening from "@/models/CareerOpening";
 
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const authError = checkAdminAuth(req);
-  if (authError) return authError;
-
-  const body = await req.json().catch(() => null);
-  if (!body) {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+export async function PUT(req: Request, { params }: any) {
+  const session = cookies().get("admin_session");
+  if (!session || session.value !== "active") {
+    return NextResponse.json({ success: false }, { status: 401 });
   }
 
-  const db = await getDb();
-  const _id = new ObjectId(params.id);
+  const { id } = params;
+  const body = await req.json();
+  const { status, title, department, description, location } = body;
 
-  const update: any = {
-    updatedAt: new Date(),
-  };
-  if (body.title) update.title = String(body.title);
-  if (body.location !== undefined) update.location = String(body.location);
-  if (body.type !== undefined) update.type = String(body.type);
-  if (body.summary !== undefined) update.summary = String(body.summary);
-  if (body.isActive !== undefined) update.isActive = Boolean(body.isActive);
+  await connectDB();
 
-  await db.collection("careerOpenings").updateOne({ _id }, { $set: update });
+  await CareerOpening.findByIdAndUpdate(id, {
+    status,
+    title,
+    department,
+    description,
+    location,
+  });
 
   return NextResponse.json({ success: true });
 }
 
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
-  const authError = checkAdminAuth(req);
-  if (authError) return authError;
+export async function DELETE(req: Request, { params }: any) {
+  const session = cookies().get("admin_session");
+  if (!session || session.value !== "active") {
+    return NextResponse.json({ success: false }, { status: 401 });
+  }
 
-  const db = await getDb();
-  const _id = new ObjectId(params.id);
-  await db.collection("careerOpenings").deleteOne({ _id });
+  const { id } = params;
+
+  await connectDB();
+  await CareerOpening.findByIdAndDelete(id);
 
   return NextResponse.json({ success: true });
 }
