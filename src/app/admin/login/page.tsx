@@ -13,6 +13,8 @@ export default function AdminLoginPage() {
   const [mfaCode, setMfaCode] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [rememberDevice, setRememberDevice] = useState(false);
+
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -22,7 +24,7 @@ export default function AdminLoginPage() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, mfaCode }),
+        body: JSON.stringify({ email, password, mfaCode, rememberDevice }),
       });
 
       const data = await res.json();
@@ -93,6 +95,19 @@ export default function AdminLoginPage() {
               </p>
             )}
 
+            <div className="flex items-center gap-2">
+              <input
+                id="rememberDevice"
+                type="checkbox"
+                checked={rememberDevice}
+                onChange={(e) => setRememberDevice(e.target.checked)}
+                className="h-3 w-3"
+              />
+              <label htmlFor="rememberDevice" className="text-[11px] text-muted-foreground">
+                Trust this device for 24 hours
+              </label>
+            </div>
+  
             <Button
               type="submit"
               size="sm"
