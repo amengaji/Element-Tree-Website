@@ -13,6 +13,16 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  // If MFA not configured → force setup
+  if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/mfa")) {
+    const secret = process.env.ADMIN_TOTP_SECRET;
+    if (!secret || secret.trim().length < 16) {
+      const url = req.nextUrl.clone();
+      url.pathname = "/admin/mfa/setup";
+      return NextResponse.redirect(url);
+    }
+  }
+
   // Protect everything else under /admin
   if (pathname.startsWith("/admin")) {
     const session = req.cookies.get("admin_session")?.value;

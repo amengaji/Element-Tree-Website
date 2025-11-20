@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Mail, LayoutDashboard, Briefcase, LogOut } from "lucide-react";
+import { Mail, LayoutDashboard, Briefcase, LogOut, Lock, Key } from "lucide-react";
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
@@ -24,6 +24,12 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       href: "/admin/careers",
       icon: <Briefcase className="h-4 w-4" />,
     },
+    {
+      label: "MFA Setup",
+      href: "/admin/mfa/setup",
+      icon: <Lock className="h-4 w-4" />,
+    },
+
   ];
 
   return (
