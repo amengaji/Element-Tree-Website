@@ -1,26 +1,17 @@
-// src/app/api/admin/check-session/route.ts
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
 export async function GET() {
   try {
-    // cookies() is synchronous in App Router
-    const cookieStore = cookies();
+    const cookieStore = await cookies(); // NEXT.JS 16 = ASYNC
 
-    // Read cookie
     const session = cookieStore.get("admin_session");
 
-    // No cookie found → user NOT logged in
-    if (!session || !session.value) {
+    if (!session || session.value !== "active") {
       return NextResponse.json({ active: false });
     }
 
-    // Validate value
-    const isActive = session.value === "active";
-
-    return NextResponse.json({
-      active: isActive,
-    });
+    return NextResponse.json({ active: true });
 
   } catch (err) {
     console.error("check-session error:", err);

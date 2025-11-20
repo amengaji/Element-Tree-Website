@@ -1,44 +1,48 @@
-// src/app/api/admin/applications/route.ts
+// src/app/api/careers/apply/route.ts
+
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { connectDB } from "@/lib/db";
-import Applicant from "@/models/Applicant";
+import Applicant from "@/models/ApplicantModel";
 
-export async function GET() {
-  const session = cookies().get("admin_session");
-  if (!session || session.value !== "active") {
-    return NextResponse.json(
-      { success: false, error: "Unauthorized" },
-      { status: 401 }
-    );
-  }
-
+export async function POST(req: Request) {
   try {
     await connectDB();
-    const docs = await Applicant.find().sort({ createdAt: -1 });
 
-    const data = docs.map((a) => ({
-      id: a._id.toString(),
-      fullName: a.fullName,
-      email: a.email,
-      phone: a.phone,
-      portfolio: a.portfolio,
-      linkedin: a.linkedin,
-      resumeUrl: a.resumeUrl,
-      coverLetter: a.coverLetter,
-      department: a.department,
-      role: a.role,
-      experience: a.experience,
-      country: a.country,
-      status: a.status,
-      createdAt: a.createdAt,
-    }));
+    const body = await req.json();
 
-    return NextResponse.json({ success: true, data });
+    const {
+      departmentKey,
+      roleKey,
+      basicInfo,
+      roleAnswers,
+      stepVersion
+    } = body;
+
+    const newApplicant = new Applicant({
+      fullName: basicInfo.fullName,
+      email: basicInfo.email,
+      phone: basicInfo.phone,
+      portfolio: basicInfo.portfolio ?? "",
+      linkedin: basicInfo.linkedin ?? "",
+      resumeUrl: "",
+      coverLetter: "",
+      department: departmentKey,
+      role: roleKey,
+      experience: basicInfo.totalExp ?? "",
+      country: basicInfo.city ?? "",
+      status: "New",
+      stepVersion,
+      roleAnswers,
+    });
+
+    await newApplicant.save();
+
+    return NextResponse.json({ ok: true });
+
   } catch (err) {
-    console.error("Admin Applications Error:", err);
+    console.error("Career Apply Error:", err);
     return NextResponse.json(
-      { success: false, error: "Failed to load applications." },
+      { ok: false, error: "Failed to submit application" },
       { status: 500 }
     );
   }

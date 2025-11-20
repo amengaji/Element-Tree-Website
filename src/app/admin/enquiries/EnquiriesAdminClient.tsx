@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Mail, Lock, Search, Filter, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Mail, Search, Filter, AlertTriangle, CheckCircle2 } from "lucide-react";
 
 type Enquiry = {
   id: string;
@@ -17,10 +17,6 @@ type Enquiry = {
 };
 
 export default function EnquiriesAdminClient() {
-  const [mfaCode, setMfaCode] = useState("");
-  const [mfaError, setMfaError] = useState("");
-  const [isMfaVerified, setIsMfaVerified] = useState(false);
-
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
   const [filtered, setFiltered] = useState<Enquiry[]>([]);
   const [loading, setLoading] = useState(false);
@@ -28,42 +24,20 @@ export default function EnquiriesAdminClient() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "new" | "read" | "archived">("all");
 
-  async function handleVerifyMfa(e: React.FormEvent) {
-    e.preventDefault();
-    setMfaError("");
-
-    try {
-      const res = await fetch("/api/admin/verify-mfa", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: mfaCode.trim() }),
-      });
-
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        setMfaError(data.error || "Invalid code.");
-        return;
-      }
-
-      setIsMfaVerified(true);
-      fetchEnquiries();
-    } catch (err) {
-      console.error(err);
-      setMfaError("Something went wrong.");
-    }
-  }
-
   async function fetchEnquiries() {
     try {
       setLoading(true);
       setLoadError("");
+
       const res = await fetch("/api/admin/enquiries");
       const data = await res.json();
+
       if (!res.ok || !data.success) {
         setLoadError(data.error || "Failed to load enquiries.");
         setLoading(false);
         return;
       }
+
       setEnquiries(data.data);
       setLoading(false);
     } catch (err) {
@@ -74,8 +48,10 @@ export default function EnquiriesAdminClient() {
   }
 
   useEffect(() => {
-    if (!isMfaVerified) return;
+    fetchEnquiries();
+  }, []);
 
+  useEffect(() => {
     let items = [...enquiries];
 
     if (statusFilter !== "all") {
@@ -95,45 +71,7 @@ export default function EnquiriesAdminClient() {
     }
 
     setFiltered(items);
-  }, [enquiries, search, statusFilter, isMfaVerified]);
-
-  if (!isMfaVerified) {
-    return (
-      <div className="mx-auto max-w-md rounded-2xl border border-border/70 bg-background p-8 shadow-soft">
-        <div className="flex items-center gap-3 mb-4">
-          <Lock className="h-5 w-5 text-primary" />
-          <h1 className="text-lg font-semibold">Enquiries Admin – MFA</h1>
-        </div>
-        <p className="text-sm text-muted-foreground mb-4">
-          Enter the one-time admin access code to view website enquiries.
-        </p>
-        <form className="space-y-4" onSubmit={handleVerifyMfa}>
-          <div className="space-y-1">
-            <label className="text-xs font-medium">Access code</label>
-            <input
-              type="password"
-              value={mfaCode}
-              onChange={(e) => setMfaCode(e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-1 focus-visible:ring-primary"
-              placeholder="6-digit code"
-            />
-          </div>
-          {mfaError && (
-            <p className="text-xs text-red-500 flex items-center gap-1">
-              <AlertTriangle className="h-3 w-3" />
-              {mfaError}
-            </p>
-          )}
-          <button
-            type="submit"
-            className="w-full rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition hover:shadow-soft-lg hover:-translate-y-px"
-          >
-            Verify &amp; Continue
-          </button>
-        </form>
-      </div>
-    );
-  }
+  }, [enquiries, search, statusFilter]);
 
   return (
     <div className="space-y-6">
