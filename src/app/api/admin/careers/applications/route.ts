@@ -1,6 +1,6 @@
 // src/app/api/admin/careers/applications/route.ts
 import { NextResponse } from "next/server";
-import { getDb } from "@/lib/mongo";
+import { getDb } from "@/lib/mongodb";
 
 export async function GET(request: Request) {
   try {

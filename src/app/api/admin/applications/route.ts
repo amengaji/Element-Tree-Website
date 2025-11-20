@@ -1,6 +1,6 @@
 // src/app/api/admin/applications/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/mongo";
+import { getDb } from "@/lib/mongodb";
 import { checkAdminAuth } from "@/lib/admin-auth";
 
 export async function GET(req: NextRequest) {
