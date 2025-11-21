@@ -54,7 +54,7 @@ export default function CareersPageClient() {
                   }}
                   className={cn(
                     "group text-left rounded-2xl border bg-background/80 px-6 py-6 shadow-sm transition-all",
-                    "hover:border-emerald-400 hover:bg-emerald-50/60 hover:shadow-md",
+                    "hover:border-[#3194A0] hover:bg-emerald-50/60 hover:shadow-md",
                     selected &&
                       "border-[#3194A0] bg-emerald-50 shadow-soft-lg"
                   )}
@@ -65,7 +65,7 @@ export default function CareersPageClient() {
                     <span
                       className={cn(
                         "h-2.5 w-2.5 rounded-full transition",
-                        selected ? "bg-emerald-500" : "bg-border"
+                        selected ? "bg-[#3914A0]" : "bg-border"
                       )}
                     ></span>
                   </div>
@@ -80,7 +80,7 @@ export default function CareersPageClient() {
                     {dept.roles.slice(0, 3).map((r) => (
                       <span
                         key={r.key}
-                        className="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] text-emerald-600"
+                        className="inline-flex items-center rounded-full bg-[#3914A0]/10 px-3 py-1 text-[11px] text-emerald-600"
                       >
                         {r.name}
                       </span>
@@ -124,7 +124,7 @@ export default function CareersPageClient() {
                     onClick={() => setSelectedRole(role.key)}
                     className={cn(
                       "w-full text-left rounded-xl border px-4 py-4 transition-all",
-                      "hover:border-emerald-400 hover:bg-emerald-50/60",
+                      "hover:border-[#3194A0] hover:bg-emerald-50/60",
                       selected && "border-[#3194A0] bg-emerald-50"
                     )}
                   >

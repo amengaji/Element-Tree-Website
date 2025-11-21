@@ -152,7 +152,7 @@ export default function ContactPageClient() {
 
       <section className="grid gap-10 md:grid-cols-[1.3fr,0.9fr]">
         {/* Contact form */}
-        <Card>
+        <Card className="bg-card text-card-foreground border-border shadow-soft hover:border-primary transition-colors text-[#3194A0]">
           <CardHeader>
             <CardTitle>Start a conversation</CardTitle>
           </CardHeader>
@@ -160,7 +160,7 @@ export default function ContactPageClient() {
             <form className="space-y-4 text-sm" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1">
-                  <label className="text-xs font-medium">Full name</label>
+                  <label className="text-xs font-medium ">Full name</label>
                   <input
                     type="text"
                     required
@@ -171,7 +171,7 @@ export default function ContactPageClient() {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-medium">Work email</label>
+                  <label className="text-xs font-medium ">Work email</label>
                   <input
                     type="email"
                     required
@@ -264,20 +264,21 @@ export default function ContactPageClient() {
         </Card>
 
         {/* Right side info – NO direct email printed */}
-        <Card className="h-full">
+        <Card className="h-full bg-card text-card-foreground border-border shadow-soft text-[#3194A0]">
+
           <CardHeader>
             <CardTitle>How we respond</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <CardContent className="space-y-4 text-sm text-muted-foreground ">
             <div>
-              <p className="text-xs font-semibold text-foreground">
+              <p className="text-xs font-semibold text-[#3194A0] ">
                 Response time
               </p>
               <p>Typically within 1–2 business days.</p>
             </div>
 
             <div>
-              <p className="text-xs font-semibold text-foreground">
+              <p className="text-xs font-semibold text-[#3194A0]">
                 What to include
               </p>
               <ul className="mt-1 space-y-1 text-xs">
@@ -288,7 +289,7 @@ export default function ContactPageClient() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold text-foreground">
+              <p className="text-xs font-semibold text-[#3194A0]">
                 Office address
               </p>
               <p>D-601, Raikar Chambers,</p>
@@ -297,7 +298,7 @@ export default function ContactPageClient() {
               <p>Maharashtra, India</p>
             </div>
 
-            <div className="text-xs text-muted-foreground/80">
+            <div className="text-xs text-muted-foreground/80 text-justify">
               We keep your email and phone details private and use them only to
               follow up on your enquiry. Automated spam and repeated submissions
               are filtered.

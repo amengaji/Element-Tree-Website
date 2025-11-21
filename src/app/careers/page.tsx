@@ -14,7 +14,7 @@ export default function CareersPage() {
       <div className="container space-y-12">
         {/* HERO */}
         <header className="space-y-4">
-          <p className="inline-flex items-center rounded-full border border-[#3194A0]/30 bg-emerald-500/5 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
+          <p className="inline-flex items-center rounded-full border border-[#3194A0]/30 bg-[#3914A0]/5 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
             We’re hiring across creative, engineering & maritime.
           </p>
 
@@ -31,7 +31,7 @@ export default function CareersPage() {
 
           <div className="flex flex-wrap gap-3 text-[11px] text-muted-foreground">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="h-2 w-2 rounded-full bg-[#3194A0]" />
               Offline only · Mumbai
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3 py-1">
@@ -50,7 +50,7 @@ export default function CareersPage() {
 
         {/* LIFE AT ELEMENT TREE */}
         <section className="grid gap-6 md:grid-cols-3 text-sm">
-          <div className="rounded-2xl border border-[#3194A0]/25 bg-emerald-500/5 p-5 shadow-soft">
+          <div className="rounded-2xl border border-[#3194A0]/25 bg-[#3914A0]/5 p-5 shadow-soft">
             <h2 className="text-sm font-semibold mb-2">
               Built around maritime & learning
             </h2>

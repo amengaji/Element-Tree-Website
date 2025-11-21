@@ -21,8 +21,8 @@ export default function ICheckPage() {
         {/* HERO */}
         <header className="grid gap-10 md:grid-cols-[1.6fr,1.2fr] items-center">
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold text-indigo-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#3194A0]/10 px-4 py-1.5 text-xs font-semibold text-[#3194A0]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3194A0]" />
               Ship Inspections &amp; Audits
             </div>
             <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
@@ -48,11 +48,11 @@ export default function ICheckPage() {
 
           {/* VISUAL */}
           <div className="relative">
-            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-indigo-400/20 blur-3xl" />
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#3194A0]/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-background shadow-soft-lg p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="product-logo bg-indigo-500/10 text-indigo-500">
+                  <div className="product-logo bg-[#3194A0]/10 text-[#3194A0]">
                     IC
                   </div>
                   <div>
@@ -62,7 +62,7 @@ export default function ICheckPage() {
                     <p className="text-sm font-semibold">iCheck</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-[11px] font-medium text-indigo-500">
+                <span className="rounded-full bg-[#3194A0]/10 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
                   Vessel inspection
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function ICheckPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <ClipboardList className="mb-4 h-6 w-6 text-indigo-500" />
+              <ClipboardList className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">
                 SIRE, RISQ &amp; internal templates
               </h3>
@@ -112,7 +112,7 @@ export default function ICheckPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <WifiOff className="mb-4 h-6 w-6 text-indigo-500" />
+              <WifiOff className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Offline-first mindset</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Run full inspections without signal. Sync back automatically
@@ -120,7 +120,7 @@ export default function ICheckPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <Camera className="mb-4 h-6 w-6 text-indigo-500" />
+              <Camera className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Evidence, not just ticks</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Attach photos, videos, rectification notes and human
@@ -128,7 +128,7 @@ export default function ICheckPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <FileText className="mb-4 h-6 w-6 text-indigo-500" />
+              <FileText className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Instant, clean reporting</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Generate formatted PDFs with vessel details, sections, findings
@@ -139,10 +139,10 @@ export default function ICheckPage() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-3xl border border-indigo-500/40 bg-indigo-500/8 p-8 text-sm shadow-soft">
+        <section className="rounded-3xl border border-[#3194A0]/40 bg-[#3194A0]/8 p-8 text-sm shadow-soft">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#3194A0]">
                 Bring your current forms
               </p>
               <p className="mt-2 max-w-xl text-sm text-muted-foreground">

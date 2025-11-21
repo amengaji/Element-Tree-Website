@@ -493,12 +493,12 @@ export default function CareersWizard() {
                 className={cn(
                   "flex h-9 items-center justify-center rounded-full border px-3 transition whitespace-nowrap",
                   isActive &&
-                    "border-[#3194A0] bg-emerald-500/10 text-[#3194A0] font-semibold",
+                    "border-[#3194A0] bg-[#3914A0]/10 text-[#3194A0] font-semibold",
                   !isActive &&
                     !isCompleted &&
                     "border-border/70 text-muted-foreground",
                   isCompleted &&
-                    "border-emerald-400 bg-emerald-500/10 text-emerald-300",
+                    "border-[#3194A0] bg-[#3914A0]/10 text-[#3914A0]",
                 )}
               >
                 <span className="mr-1">{idx + 1}.</span>
@@ -543,7 +543,7 @@ function renderDepartmentStep() {
               }}
               className={cn(
                 "text-left rounded-2xl border px-6 py-6 shadow-sm transition-all",
-                "hover:border-emerald-400 hover:bg-emerald-100/20 hover:shadow-md dark:hover:bg-emerald-900/30",
+                "hover:border-[#3194A0] hover:bg-emerald-100/20 hover:shadow-md dark:hover:bg-emerald-900/30",
                 isSelected
                   ? "border-[#3194A0] bg-emerald-50 shadow-lg"
                   : "border-neutral-200 dark:border-border/70  bg-background/80"
@@ -567,7 +567,7 @@ function renderDepartmentStep() {
                 {dept.roles.slice(0, 3).map((r) => (
                   <span
                     key={r.key}
-                    className="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] text-emerald-700"
+                    className="inline-flex items-center rounded-full bg-[#3914A0]/10 px-3 py-1 text-[11px] text-emerald-700"
                   >
                     {r.title}
                   </span>
@@ -629,9 +629,9 @@ function renderDepartmentStep() {
                     setRoleAnswers({});
                   }}
                   className={cn(
-                    "w-full rounded-xl border px-4 py-3 text-left text-xs transition hover:border-emerald-400/70 hover:bg-emerald-500/5",
+                    "w-full rounded-xl border px-4 py-3 text-left text-xs transition hover:border-[#3194A0]/70 hover:bg-[#3914A0]/5",
                     isSelected
-                      ? "border-[#3194A0] bg-emerald-500/10"
+                      ? "border-[#3194A0] bg-[#3914A0]/10"
                       : "border-border/70 bg-background/80",
                   )}
                 >
@@ -675,7 +675,7 @@ function renderDepartmentStep() {
             <input
               value={basicInfo.fullName}
               onChange={(e) => setField("fullName", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="Your name"
             />
           </div>
@@ -685,7 +685,7 @@ function renderDepartmentStep() {
               type="email"
               value={basicInfo.email}
               onChange={(e) => setField("email", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="you@company.com"
             />
           </div>
@@ -694,7 +694,7 @@ function renderDepartmentStep() {
             <input
               value={basicInfo.phone}
               onChange={(e) => setField("phone", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="+91 ..."
             />
           </div>
@@ -703,7 +703,7 @@ function renderDepartmentStep() {
             <input
               value={basicInfo.city}
               onChange={(e) => setField("city", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="Mumbai, Kochi, ..."
             />
           </div>
@@ -714,7 +714,7 @@ function renderDepartmentStep() {
             <input
               value={basicInfo.totalExp}
               onChange={(e) => setField("totalExp", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="e.g. 3.5"
             />
           </div>
@@ -723,7 +723,7 @@ function renderDepartmentStep() {
             <input
               value={basicInfo.currentRole}
               onChange={(e) => setField("currentRole", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="e.g. Senior 3D Generalist"
             />
           </div>
@@ -732,7 +732,7 @@ function renderDepartmentStep() {
             <input
               value={basicInfo.linkedin}
               onChange={(e) => setField("linkedin", e.target.value)}
-              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+              className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
               placeholder="https://linkedin.com/in/..."
             />
           </div>
@@ -787,8 +787,8 @@ function renderDepartmentStep() {
                         className={cn(
                           "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] cursor-pointer transition",
                           roleAnswers[q.id] === val
-                            ? "border-[#3194A0] bg-emerald-500/10 text-emerald-300"
-                            : "border-border/70 bg-background/80 hover:border-emerald-400/70 hover:bg-emerald-500/5",
+                            ? "border-[#3194A0] bg-[#3914A0]/10 text-[#3914A0]"
+                            : "border-border/70 bg-background/80 hover:border-[#3194A0]/70 hover:bg-[#3914A0]/5",
                         )}
                       >
                         <input
@@ -818,7 +818,7 @@ function renderDepartmentStep() {
                         [q.id]: e.target.value,
                       }))
                     }
-                    className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+                    className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
                     placeholder="Enter a number"
                   />
                 ) : (
@@ -831,7 +831,7 @@ function renderDepartmentStep() {
                         [q.id]: e.target.value,
                       }))
                     }
-                    className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+                    className="w-full rounded-lg border border-border bg-background px-3 py-2 outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
                     placeholder="Write a short answer…"
                   />
                 )}
@@ -929,7 +929,7 @@ function renderDepartmentStep() {
         </div>
 
         {submitState === "success" && (
-          <div className="flex items-center gap-2 rounded-xl border border-[#3194A0]/40 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-300">
+          <div className="flex items-center gap-2 rounded-xl border border-[#3194A0]/40 bg-[#3914A0]/10 px-3 py-2 text-xs text-[#3914A0]">
             <CheckCircle2 className="h-4 w-4" />
             <p>
               Thank you! Your application has been recorded. If your profile
@@ -985,7 +985,7 @@ function renderDepartmentStep() {
               size="sm"
               onClick={goNext}
               disabled={!canGoNext()}
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-emerald-400 disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded-full bg-[#3914A0] px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-[#3194A0] disabled:opacity-60"
             >
               Next
               <ArrowRight className="h-3.5 w-3.5" />
@@ -998,7 +998,7 @@ function renderDepartmentStep() {
               size="sm"
               disabled={submitState === "submitting" || submitState === "success"}
               onClick={handleSubmit}
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-emerald-400 disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded-full bg-[#3914A0] px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-[#3194A0] disabled:opacity-60"
             >
               {submitState === "submitting" ? "Submitting…" : "Submit application"}
               {submitState !== "success" && (

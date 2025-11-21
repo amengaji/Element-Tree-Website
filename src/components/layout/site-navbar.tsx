@@ -1,3 +1,4 @@
+// src/components/layout/site-navbar.tsx
 "use client";
 
 import Link from "next/link";
@@ -57,7 +58,7 @@ export default function SiteNavbar() {
             <Link
               href="/"
               className={cn(
-                "hover:text-primary transition-colors",
+                "hover:text-[#3194A0] transition-colors",
                 isActive("/") ? "text-primary" : "text-muted-foreground"
               )}
             >
@@ -72,7 +73,7 @@ export default function SiteNavbar() {
             >
               <button
                 className={cn(
-                  "hover:text-primary transition-colors",
+                  "hover:text-[#3194A0] transition-colors",
                   openMenu === "products"
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -91,7 +92,7 @@ export default function SiteNavbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block rounded-md px-4 py-2 text-sm text-muted-foreground hover:bg-muted/50 hover:text-foreground transition"
+                        className="block rounded-md px-4 py-2 text-sm text-muted-foreground hover:bg-muted/50 hover:text-[#3194A0] transition"
                       >
                         {item.label}
                       </Link>
@@ -109,7 +110,7 @@ export default function SiteNavbar() {
             >
               <button
                 className={cn(
-                  "hover:text-primary transition-colors",
+                  "hover:text-[#3194A0] transition-colors",
                   openMenu === "solutions"
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -128,7 +129,7 @@ export default function SiteNavbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block rounded-md px-4 py-2 text-sm text-muted-foreground hover:bg-muted/50 hover:text-foreground transition"
+                        className="block rounded-md px-4 py-2 text-sm text-muted-foreground hover:bg-muted/50 hover:text-[#3194A0] transition"
                       >
                         {item.label}
                       </Link>
@@ -146,7 +147,7 @@ export default function SiteNavbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "hover:text-primary transition-colors",
+                    "hover:text-[#3194A0] transition-colors",
                     isActive(item.href)
                       ? "text-primary"
                       : "text-muted-foreground"

@@ -21,8 +21,8 @@ export default function NavigatePage() {
         {/* HERO */}
         <header className="grid gap-10 md:grid-cols-[1.6fr,1.2fr] items-center">
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-[#3194A0]">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#3194A0]/10 px-4 py-1.5 text-xs font-semibold text-[#3194A0]">
+              <span className="h-1.5 w-1.5 rounded-full bg-e[#3194A0]" />
               Assessments &amp; Proctoring
             </div>
             <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
@@ -49,11 +49,11 @@ export default function NavigatePage() {
 
           {/* VISUAL / "IMAGE" */}
           <div className="relative">
-            <div className="absolute -top-10 -right-6 h-40 w-40 rounded-full bg-emerald-400/15 blur-3xl" />
+            <div className="absolute -top-10 -right-6 h-40 w-40 rounded-full bg-e[#3194A0]/15 blur-3xl" />
             <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-background shadow-soft-lg p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="product-logo bg-emerald-500/10 text-[#3194A0]">
+                  <div className="product-logo bg-[#3194A0]/10 text-[#3194A0]">
                     NV
                   </div>
                   <div>
@@ -63,7 +63,7 @@ export default function NavigatePage() {
                     <p className="text-sm font-semibold">Navigate</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
+                <span className="rounded-full bg-[#3194A0]/10 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
                   Competency Assessments
                 </span>
               </div>
@@ -78,7 +78,7 @@ export default function NavigatePage() {
                   <p>Mode: Proctored · 45 mins · 30 questions</p>
                 </div>
                 <div className="flex gap-2">
-                  <div className="flex-1 rounded-xl bg-emerald-500/10 px-3 py-2">
+                  <div className="flex-1 rounded-xl bg-[#3194A0]/10 px-3 py-2">
                     <p className="text-[10px] uppercase text-[#3194A0]">
                       First attempt
                     </p>
@@ -145,7 +145,7 @@ export default function NavigatePage() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-3xl border border-[#3194A0]/40 bg-emerald-500/8 p-8 text-sm shadow-soft">
+        <section className="rounded-3xl border border-[#3194A0]/40 bg-[#3194A0]/8 p-8 text-sm shadow-soft">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-[#3194A0]">

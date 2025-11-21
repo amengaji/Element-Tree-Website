@@ -21,8 +21,8 @@ export default function LearnPage() {
         {/* HERO */}
         <header className="grid gap-10 md:grid-cols-[1.6fr,1.2fr] items-center">
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full bg-sky-500/10 px-4 py-1.5 text-xs font-semibold text-sky-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#3194A0]/10 px-4 py-1.5 text-xs font-semibold text-[#3194A0]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3194A0]" />
               Courses & Maritime LMS
             </div>
 
@@ -51,11 +51,11 @@ export default function LearnPage() {
 
           {/* VISUAL */}
           <div className="relative">
-            <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-sky-400/20 blur-3xl" />
+            <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-[#3194A0]/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-background shadow-soft-lg p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="product-logo bg-sky-500/10 text-sky-500">
+                  <div className="product-logo bg-[#3194A0]/10 text-[#3194A0]">
                     LL
                   </div>
                   <div>
@@ -66,7 +66,7 @@ export default function LearnPage() {
                   </div>
                 </div>
 
-                <span className="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-medium text-sky-500">
+                <span className="rounded-full bg-[#3194A0]/10 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
                   Course Library
                 </span>
               </div>
@@ -110,7 +110,7 @@ export default function LearnPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {/* Feature 1 */}
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <Layers className="mb-4 h-6 w-6 text-sky-500" />
+              <Layers className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Rich learning paths</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Combine video, SCORM, PDFs, quizzes and assignments into clear
@@ -120,7 +120,7 @@ export default function LearnPage() {
 
             {/* Feature 2 */}
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <LayoutList className="mb-4 h-6 w-6 text-sky-500" />
+              <LayoutList className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Rank & vessel catalogs</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Maintain separate learning catalogs for officers, ratings,
@@ -130,7 +130,7 @@ export default function LearnPage() {
 
             {/* Feature 3 */}
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <FileBadge2 className="mb-4 h-6 w-6 text-sky-500" />
+              <FileBadge2 className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Certificates & validity</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Auto-generate certificates with expiry tracking, renewal alerts
@@ -140,7 +140,7 @@ export default function LearnPage() {
 
             {/* Feature 4 */}
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <Users className="mb-4 h-6 w-6 text-sky-500" />
+              <Users className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Cohorts & classes</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Run batches, assign instructors, track live progress and collect
@@ -151,10 +151,10 @@ export default function LearnPage() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-3xl border border-sky-500/40 bg-sky-500/8 p-8 text-sm shadow-soft">
+        <section className="rounded-3xl border border-[#3194A0]/40 bg-[#3194A0]/8 p-8 text-sm shadow-soft">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-sky-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#3194A0]">
                 Pair Learn with Navigate
               </p>
 

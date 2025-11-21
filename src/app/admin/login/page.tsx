@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
                 placeholder="admin@elementree.co.in"
               />
             </div>
@@ -73,7 +73,7 @@ export default function AdminLoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
                 placeholder="Your admin password"
               />
             </div>
@@ -84,7 +84,7 @@ export default function AdminLoginPage() {
                 value={mfaCode}
                 onChange={(e) => setMfaCode(e.target.value)}
                 maxLength={6}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-xs outline-none focus-visible:ring-1 focus-visible:ring-[#3194A0]"
                 placeholder="6-digit code"
               />
             </div>
@@ -112,7 +112,7 @@ export default function AdminLoginPage() {
               type="submit"
               size="sm"
               disabled={loading}
-              className="w-full rounded-full bg-emerald-500 text-emerald-950 text-xs font-semibold hover:bg-emerald-400"
+              className="w-full rounded-full bg-[#3914A0] text-xs font-semibold hover:bg-[#3194A0]"
             >
               {loading ? "Signing in…" : "Sign in"}
             </Button>
