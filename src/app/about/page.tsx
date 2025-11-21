@@ -19,7 +19,7 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             About <span className="text-primary">Element Tree</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed text-justify">
             Founded in 2018 by Capt. Anuj Mengaji, Element Tree is a technology
             and creative studio specializing in maritime training, HRMS
             platforms, software engineering, 3D animation, and cyber safety
@@ -36,7 +36,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed text-justify">
               To revolutionize maritime and corporate training through
               cutting-edge technology, immersive 3D content, and powerful
               software solutions that elevate learning, safety, and operational
@@ -46,10 +46,9 @@ export default function AboutPage() {
 
           <div>
             <h2 className="text-2xl font-semibold mb-4">Our Vision</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              To become a global leader in digital maritime innovation, HRMS
-              automation, and next-generation educational technology — empowering
-              people and transforming industries.
+            <p className="text-muted-foreground leading-relaxed text-justify">
+              To develop specialized digital ecosystems that streamline maritime operations, 
+              automate workforce management, and modernize technical training.
             </p>
           </div>
 
@@ -80,21 +79,21 @@ export default function AboutPage() {
                 </span>
               </h2>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-justify">
                 With over 30 years of maritime and software development
                 experience, Capt. Anuj founded Element Tree in 2018 to bring
                 modern, innovative digital solutions to maritime training,
                 safety, simulations, and enterprise software.
               </p>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-justify">
                 His leadership journey includes senior roles at Teekay Tankers,
                 World Tankers Management, ADK Maritime, and “K” Line Ship
                 Management. His expertise spans ship management, marine safety,
                 inspections, cyber security, and enterprise technology.
               </p>
 
-              <blockquote className="border-l-4 border-primary/50 pl-4 italic text-muted-foreground">
+              <blockquote className="border-l-4 border-primary/50 pl-4 italic text-muted-foreground text-justify">
                 “Technology should simplify work processes and improve lives —
                 that is the foundation of everything we build at Element Tree.”
               </blockquote>
