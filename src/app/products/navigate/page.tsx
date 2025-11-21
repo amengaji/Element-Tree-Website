@@ -21,7 +21,7 @@ export default function NavigatePage() {
         {/* HERO */}
         <header className="grid gap-10 md:grid-cols-[1.6fr,1.2fr] items-center">
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-500">
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-[#3194A0]">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               Assessments &amp; Proctoring
             </div>
@@ -53,7 +53,7 @@ export default function NavigatePage() {
             <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-background shadow-soft-lg p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="product-logo bg-emerald-500/10 text-emerald-500">
+                  <div className="product-logo bg-emerald-500/10 text-[#3194A0]">
                     NV
                   </div>
                   <div>
@@ -63,7 +63,7 @@ export default function NavigatePage() {
                     <p className="text-sm font-semibold">Navigate</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-500">
+                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
                   Competency Assessments
                 </span>
               </div>
@@ -71,7 +71,7 @@ export default function NavigatePage() {
               <div className="mt-5 space-y-3 text-[11px] text-muted-foreground">
                 <div className="flex items-center justify-between rounded-2xl bg-muted px-3 py-2">
                   <span>Deck Officer Level 2 – Cargo Handling</span>
-                  <span className="text-emerald-500">Live</span>
+                  <span className="text-[#3194A0]">Live</span>
                 </div>
                 <div className="rounded-2xl bg-background px-3 py-2 shadow-soft">
                   <p>Candidate: AB PETER IVANOV</p>
@@ -79,7 +79,7 @@ export default function NavigatePage() {
                 </div>
                 <div className="flex gap-2">
                   <div className="flex-1 rounded-xl bg-emerald-500/10 px-3 py-2">
-                    <p className="text-[10px] uppercase text-emerald-500">
+                    <p className="text-[10px] uppercase text-[#3194A0]">
                       First attempt
                     </p>
                     <p className="text-xs font-semibold text-emerald-600">
@@ -107,7 +107,7 @@ export default function NavigatePage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <MonitorCheck className="mb-4 h-6 w-6 text-emerald-500" />
+              <MonitorCheck className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Secure exam flows</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Time windows, attempt limits, section rules, safe navigation and
@@ -116,7 +116,7 @@ export default function NavigatePage() {
             </div>
 
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <ShieldCheck className="mb-4 h-6 w-6 text-emerald-500" />
+              <ShieldCheck className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Proctoring choices</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Face capture, environment checks and screen monitoring –
@@ -125,7 +125,7 @@ export default function NavigatePage() {
             </div>
 
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <BarChart3 className="mb-4 h-6 w-6 text-emerald-500" />
+              <BarChart3 className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Smart scoring models</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 First/second attempt scoring, question weights, topic-wise
@@ -134,7 +134,7 @@ export default function NavigatePage() {
             </div>
 
             <div className="rounded-2xl border border-border/60 bg-background p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg">
-              <Video className="mb-4 h-6 w-6 text-emerald-500" />
+              <Video className="mb-4 h-6 w-6 text-[#3194A0]" />
               <h3 className="text-sm font-semibold">Linked to training</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Map questions to videos and modules in Learn LMS so you know
@@ -145,10 +145,10 @@ export default function NavigatePage() {
         </section>
 
         {/* CTA */}
-        <section className="rounded-3xl border border-emerald-500/40 bg-emerald-500/8 p-8 text-sm shadow-soft">
+        <section className="rounded-3xl border border-[#3194A0]/40 bg-emerald-500/8 p-8 text-sm shadow-soft">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#3194A0]">
                 See Navigate with your own content
               </p>
               <p className="mt-2 max-w-xl text-sm text-muted-foreground">

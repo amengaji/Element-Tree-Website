@@ -493,7 +493,7 @@ export default function CareersWizard() {
                 className={cn(
                   "flex h-9 items-center justify-center rounded-full border px-3 transition whitespace-nowrap",
                   isActive &&
-                    "border-emerald-500 bg-emerald-500/10 text-emerald-400 font-semibold",
+                    "border-[#3194A0] bg-emerald-500/10 text-[#3194A0] font-semibold",
                   !isActive &&
                     !isCompleted &&
                     "border-border/70 text-muted-foreground",
@@ -518,7 +518,7 @@ function renderDepartmentStep() {
   return (
     <div className="space-y-6">
       <header className="space-y-1">
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-[#3194A0]">
           Step 1 — Select department
         </p>
         <h2 className="text-sm md:text-base font-semibold">
@@ -545,7 +545,7 @@ function renderDepartmentStep() {
                 "text-left rounded-2xl border px-6 py-6 shadow-sm transition-all",
                 "hover:border-emerald-400 hover:bg-emerald-100/20 hover:shadow-md dark:hover:bg-emerald-900/30",
                 isSelected
-                  ? "border-emerald-500 bg-emerald-50 shadow-lg"
+                  ? "border-[#3194A0] bg-emerald-50 shadow-lg"
                   : "border-neutral-200 dark:border-border/70  bg-background/80"
               )}
             >
@@ -553,7 +553,7 @@ function renderDepartmentStep() {
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-base font-semibold">{dept.name}</h3>
                 {isSelected && (
-                  <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                  <CheckCircle2 className="h-4 w-4 text-[#3194A0]" />
                 )}
               </div>
 
@@ -597,7 +597,7 @@ function renderDepartmentStep() {
     return (
       <div className="space-y-4">
         <header className="space-y-1">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-[#3194A0]">
             Step 2 — Select role
           </p>
           <h2 className="text-sm md:text-base font-semibold">
@@ -631,7 +631,7 @@ function renderDepartmentStep() {
                   className={cn(
                     "w-full rounded-xl border px-4 py-3 text-left text-xs transition hover:border-emerald-400/70 hover:bg-emerald-500/5",
                     isSelected
-                      ? "border-emerald-500 bg-emerald-500/10"
+                      ? "border-[#3194A0] bg-emerald-500/10"
                       : "border-border/70 bg-background/80",
                   )}
                 >
@@ -657,7 +657,7 @@ function renderDepartmentStep() {
     return (
       <div className="space-y-4">
         <header className="space-y-1">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-[#3194A0]">
             Step 3 — Basic information
           </p>
           <h2 className="text-sm md:text-base font-semibold">
@@ -745,7 +745,7 @@ function renderDepartmentStep() {
     return (
       <div className="space-y-4">
         <header className="space-y-1">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-[#3194A0]">
             Step 4 — Role questions
           </p>
           <h2 className="text-sm md:text-base font-semibold">
@@ -787,7 +787,7 @@ function renderDepartmentStep() {
                         className={cn(
                           "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] cursor-pointer transition",
                           roleAnswers[q.id] === val
-                            ? "border-emerald-500 bg-emerald-500/10 text-emerald-300"
+                            ? "border-[#3194A0] bg-emerald-500/10 text-emerald-300"
                             : "border-border/70 bg-background/80 hover:border-emerald-400/70 hover:bg-emerald-500/5",
                         )}
                       >
@@ -847,7 +847,7 @@ function renderDepartmentStep() {
     return (
       <div className="space-y-4">
         <header className="space-y-1">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-emerald-400">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-[#3194A0]">
             Step 5 — Review & submit
           </p>
           <h2 className="text-sm md:text-base font-semibold">
@@ -929,7 +929,7 @@ function renderDepartmentStep() {
         </div>
 
         {submitState === "success" && (
-          <div className="flex items-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-300">
+          <div className="flex items-center gap-2 rounded-xl border border-[#3194A0]/40 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-300">
             <CheckCircle2 className="h-4 w-4" />
             <p>
               Thank you! Your application has been recorded. If your profile

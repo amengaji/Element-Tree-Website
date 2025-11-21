@@ -56,7 +56,7 @@ export default function CareersPageClient() {
                     "group text-left rounded-2xl border bg-background/80 px-6 py-6 shadow-sm transition-all",
                     "hover:border-emerald-400 hover:bg-emerald-50/60 hover:shadow-md",
                     selected &&
-                      "border-emerald-500 bg-emerald-50 shadow-soft-lg"
+                      "border-[#3194A0] bg-emerald-50 shadow-soft-lg"
                   )}
                 >
                   {/* Title */}
@@ -125,7 +125,7 @@ export default function CareersPageClient() {
                     className={cn(
                       "w-full text-left rounded-xl border px-4 py-4 transition-all",
                       "hover:border-emerald-400 hover:bg-emerald-50/60",
-                      selected && "border-emerald-500 bg-emerald-50"
+                      selected && "border-[#3194A0] bg-emerald-50"
                     )}
                   >
                     <h3 className="font-medium">{role.name}</h3>

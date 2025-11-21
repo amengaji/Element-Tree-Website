@@ -17,7 +17,7 @@ export default function HomePage() {
 
         <div className="container animate-fade-up">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-3 py-1 text-[11px] font-medium text-emerald-500">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               Digital infrastructure for maritime & workforce operations
             </span>
@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="container space-y-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#3194A0]">
                 The Element Tree suite
               </p>
               <h2 className="mt-1 text-2xl font-semibold">
@@ -80,11 +80,11 @@ export default function HomePage() {
                     analytics.
                   </p>
                 </div>
-                <Compass className="h-6 w-6 text-emerald-400" />
+                <Compass className="h-6 w-6 text-[#3194A0]" />
               </div>
               <Link
                 href="/products/navigate"
-                className="mt-4 inline-flex items-center text-[11px] font-medium text-emerald-400"
+                className="mt-4 inline-flex items-center text-[11px] font-medium text-[#3194A0]"
               >
                 View product
                 <ArrowRight className="ml-1 h-3 w-3" />
@@ -173,24 +173,24 @@ export default function HomePage() {
             <div className="rounded-2xl border border-border/60 bg-background/80 p-6 shadow-soft-lg">
               <ol className="space-y-4 text-sm">
                 <li>
-                  <span className="font-semibold text-emerald-500">1.</span>{" "}
+                  <span className="font-semibold text-[#3194A0]">1.</span>{" "}
                   Create or import training in{" "}
                   <span className="font-medium">Learn LMS</span>.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-500">2.</span>{" "}
+                  <span className="font-semibold text-[#3194A0]">2.</span>{" "}
                   Run secure assessments in{" "}
                   <span className="font-medium">Navigate</span> with
                   proctoring.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-500">3.</span>{" "}
+                  <span className="font-semibold text-[#3194A0]">3.</span>{" "}
                   Conduct digital ship inspections in{" "}
                   <span className="font-medium">iCheck</span> with offline
                   mode.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-500">4.</span>{" "}
+                  <span className="font-semibold text-[#3194A0]">4.</span>{" "}
                   Sync crew records, attendance & payroll via{" "}
                   <span className="font-medium">Zenith HRMS</span>.
                 </li>
@@ -198,7 +198,7 @@ export default function HomePage() {
             </div>
 
             <div className="rounded-2xl border border-border/60 bg-secondary/60 p-6 text-sm shadow-soft">
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[#3194A0]">
                 Why this matters
               </p>
               <p className="mt-3 text-muted-foreground">

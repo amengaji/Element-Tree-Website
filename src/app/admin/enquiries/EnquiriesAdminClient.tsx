@@ -137,7 +137,7 @@ export default function EnquiriesAdminClient() {
         </div>
       ) : filtered.length === 0 ? (
         <div className="flex h-40 flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground">
-          <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+          <CheckCircle2 className="h-5 w-5 text-[#3194A0]" />
           <p>No enquiries found yet.</p>
         </div>
       ) : (
