@@ -13,12 +13,12 @@ export default function HomePage() {
       {/* HERO */}
       <section className="section relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-hero-overlay" />
-        <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-64 w-px -translate-x-1/2 bg-gradient-to-b from-emerald-400/80 via-emerald-400/0 to-transparent animate-pulse-soft" />
+        <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-64 w-px -translate-x-1/2 bg-gradient-to-b from-[#3194A0]/80 via-[#3194A0]/0 to-transparent animate-pulse-soft" />
 
         <div className="container animate-fade-up">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#3194A0]/30 bg-[#3194A0]/5 px-3 py-1 text-[11px] font-medium text-[#3194A0]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3194A0]" />
               Digital infrastructure for maritime & workforce operations
             </span>
 
@@ -101,11 +101,11 @@ export default function HomePage() {
                     tracking.
                   </p>
                 </div>
-                <BookOpen className="h-6 w-6 text-sky-400" />
+                <BookOpen className="h-6 w-6 text-[#3194A0]" />
               </div>
               <Link
                 href="/products/learn"
-                className="mt-4 inline-flex items-center text-[11px] font-medium text-sky-400"
+                className="mt-4 inline-flex items-center text-[11px] font-medium text-[#3194A0]"
               >
                 View product
                 <ArrowRight className="ml-1 h-3 w-3" />
@@ -118,15 +118,15 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-sm font-semibold">iCheck</h3>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Digital ship inspections for SIRE 2.0, RISQ & internal
-                    audits.
+                    Digital ship inspections for SIRE 2.0, RISQ & custom internal
+                    ISM/ISPS/Cargo/Mooring/ audits.
                   </p>
                 </div>
-                <ClipboardCheck className="h-6 w-6 text-indigo-400" />
+                <ClipboardCheck className="h-6 w-6 text-[#3194A0]" />
               </div>
               <Link
                 href="/products/icheck"
-                className="mt-4 inline-flex items-center text-[11px] font-medium text-indigo-400"
+                className="mt-4 inline-flex items-center text-[11px] font-medium text-[#3194A0]"
               >
                 View product
                 <ArrowRight className="ml-1 h-3 w-3" />
@@ -143,11 +143,11 @@ export default function HomePage() {
                     automation.
                   </p>
                 </div>
-                <Users className="h-6 w-6 text-rose-400" />
+                <Users className="h-6 w-6 text-[#3194A0]" />
               </div>
               <Link
                 href="/products/zenith"
-                className="mt-4 inline-flex items-center text-[11px] font-medium text-rose-400"
+                className="mt-4 inline-flex items-center text-[11px] font-medium text-[#3194A0]"
               >
                 View product
                 <ArrowRight className="ml-1 h-3 w-3" />
