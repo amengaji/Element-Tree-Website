@@ -65,7 +65,7 @@ export default function CareersPageClient() {
                     <span
                       className={cn(
                         "h-2.5 w-2.5 rounded-full transition",
-                        selected ? "bg-[#3914A0]" : "bg-border"
+                        selected ? "bg-[#3194A0]" : "bg-border"
                       )}
                     ></span>
                   </div>
@@ -80,7 +80,7 @@ export default function CareersPageClient() {
                     {dept.roles.slice(0, 3).map((r) => (
                       <span
                         key={r.key}
-                        className="inline-flex items-center rounded-full bg-[#3914A0]/10 px-3 py-1 text-[11px] text-emerald-600"
+                        className="inline-flex items-center rounded-full bg-[#3194A0]/10 px-3 py-1 text-[11px] text-emerald-600"
                       >
                         {r.name}
                       </span>

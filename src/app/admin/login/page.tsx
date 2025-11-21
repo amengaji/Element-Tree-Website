@@ -112,7 +112,7 @@ export default function AdminLoginPage() {
               type="submit"
               size="sm"
               disabled={loading}
-              className="w-full rounded-full bg-[#3914A0] text-xs font-semibold hover:bg-[#3194A0]"
+              className="w-full rounded-full bg-[#3194A0] text-xs font-semibold hover:bg-[#3194A0]"
             >
               {loading ? "Signing in…" : "Sign in"}
             </Button>

@@ -493,12 +493,12 @@ export default function CareersWizard() {
                 className={cn(
                   "flex h-9 items-center justify-center rounded-full border px-3 transition whitespace-nowrap",
                   isActive &&
-                    "border-[#3194A0] bg-[#3914A0]/10 text-[#3194A0] font-semibold",
+                    "border-[#3194A0] bg-[#3194A0]/10 text-[#3194A0] font-semibold",
                   !isActive &&
                     !isCompleted &&
                     "border-border/70 text-muted-foreground",
                   isCompleted &&
-                    "border-[#3194A0] bg-[#3914A0]/10 text-[#3914A0]",
+                    "border-[#3194A0] bg-[#3194A0]/10 text-[#3194A0]",
                 )}
               >
                 <span className="mr-1">{idx + 1}.</span>
@@ -567,7 +567,7 @@ function renderDepartmentStep() {
                 {dept.roles.slice(0, 3).map((r) => (
                   <span
                     key={r.key}
-                    className="inline-flex items-center rounded-full bg-[#3914A0]/10 px-3 py-1 text-[11px] text-emerald-700"
+                    className="inline-flex items-center rounded-full bg-[#3194A0]/10 px-3 py-1 text-[11px] text-emerald-700"
                   >
                     {r.title}
                   </span>
@@ -629,9 +629,9 @@ function renderDepartmentStep() {
                     setRoleAnswers({});
                   }}
                   className={cn(
-                    "w-full rounded-xl border px-4 py-3 text-left text-xs transition hover:border-[#3194A0]/70 hover:bg-[#3914A0]/5",
+                    "w-full rounded-xl border px-4 py-3 text-left text-xs transition hover:border-[#3194A0]/70 hover:bg-[#3194A0]/5",
                     isSelected
-                      ? "border-[#3194A0] bg-[#3914A0]/10"
+                      ? "border-[#3194A0] bg-[#3194A0]/10"
                       : "border-border/70 bg-background/80",
                   )}
                 >
@@ -787,8 +787,8 @@ function renderDepartmentStep() {
                         className={cn(
                           "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] cursor-pointer transition",
                           roleAnswers[q.id] === val
-                            ? "border-[#3194A0] bg-[#3914A0]/10 text-[#3914A0]"
-                            : "border-border/70 bg-background/80 hover:border-[#3194A0]/70 hover:bg-[#3914A0]/5",
+                            ? "border-[#3194A0] bg-[#3194A0]/10 text-[#3194A0]"
+                            : "border-border/70 bg-background/80 hover:border-[#3194A0]/70 hover:bg-[#3194A0]/5",
                         )}
                       >
                         <input
@@ -929,7 +929,7 @@ function renderDepartmentStep() {
         </div>
 
         {submitState === "success" && (
-          <div className="flex items-center gap-2 rounded-xl border border-[#3194A0]/40 bg-[#3914A0]/10 px-3 py-2 text-xs text-[#3914A0]">
+          <div className="flex items-center gap-2 rounded-xl border border-[#3194A0]/40 bg-[#3194A0]/10 px-3 py-2 text-xs text-[#3194A0]">
             <CheckCircle2 className="h-4 w-4" />
             <p>
               Thank you! Your application has been recorded. If your profile
@@ -985,7 +985,7 @@ function renderDepartmentStep() {
               size="sm"
               onClick={goNext}
               disabled={!canGoNext()}
-              className="inline-flex items-center gap-2 rounded-full bg-[#3914A0] px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-[#3194A0] disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded-full bg-[#3194A0] px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-[#3194A0] disabled:opacity-60"
             >
               Next
               <ArrowRight className="h-3.5 w-3.5" />
@@ -998,7 +998,7 @@ function renderDepartmentStep() {
               size="sm"
               disabled={submitState === "submitting" || submitState === "success"}
               onClick={handleSubmit}
-              className="inline-flex items-center gap-2 rounded-full bg-[#3914A0] px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-[#3194A0] disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded-full bg-[#3194A0] px-6 py-2 text-xs font-semibold text-emerald-950 shadow-soft transition hover:bg-[#3194A0] disabled:opacity-60"
             >
               {submitState === "submitting" ? "Submitting…" : "Submit application"}
               {submitState !== "success" && (
